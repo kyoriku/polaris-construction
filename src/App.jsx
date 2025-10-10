@@ -50,14 +50,13 @@ export default function ConstructionSite() {
 
       {/* Hero */}
       <section className="relative h-screen mt-16">
-        <img 
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=1000&fit=crop" 
-          
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=1000&fit=crop"
           alt="Construction site"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-transparent" />
-        
+
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-6 w-full">
             <div className="max-w-2xl text-white">
@@ -80,6 +79,30 @@ export default function ConstructionSite() {
                   View Our Work
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="bg-emerald-600 py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+            <div>
+              <p className="text-5xl font-bold mb-2">500+</p>
+              <p className="text-emerald-100">Projects Completed</p>
+            </div>
+            <div>
+              <p className="text-5xl font-bold mb-2">15+</p>
+              <p className="text-emerald-100">Years Experience</p>
+            </div>
+            <div>
+              <p className="text-5xl font-bold mb-2">100%</p>
+              <p className="text-emerald-100">Satisfaction Rate</p>
+            </div>
+            <div>
+              <p className="text-5xl font-bold mb-2">A+</p>
+              <p className="text-emerald-100">BBB Rating</p>
             </div>
           </div>
         </div>
