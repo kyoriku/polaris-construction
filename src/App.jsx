@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Award, ArrowRight } from 'lucide-react';
 
 export default function ConstructionSite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,11 +48,42 @@ export default function ConstructionSite() {
         </div>
       </header>
 
-      {/* Temporary content */}
-      <div className="pt-32 px-6 text-center">
-        <h1 className="text-4xl font-bold text-stone-900">Header text</h1>
-        <p className="mt-4 text-stone-600">Header description text</p>
-      </div>
+      {/* Hero */}
+      <section className="relative h-screen mt-16">
+        <img 
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=1000&fit=crop" 
+          
+          alt="Construction site"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-transparent" />
+        
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-7xl mx-auto px-6 w-full">
+            <div className="max-w-2xl text-white">
+              <div className="inline-flex items-center gap-2 bg-emerald-600 px-4 py-2 rounded-full mb-6">
+                <Award className="w-5 h-5" />
+                <span className="font-semibold">Licensed & Insured</span>
+              </div>
+              <h1 className="text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Build Your Dream<br />
+                Outdoor Space
+              </h1>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Expert construction and landscaping services. From custom decks to complete property transformations.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="px-8 py-4 bg-emerald-600 text-white font-bold text-lg rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer flex items-center justify-center gap-2">
+                  Get Free Estimate <ArrowRight className="w-5 h-5" />
+                </button>
+                <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-lg border-2 border-white hover:bg-white/20 transition-colors cursor-pointer">
+                  View Our Work
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
