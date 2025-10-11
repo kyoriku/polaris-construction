@@ -1,7 +1,31 @@
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X, Award, ArrowRight } from 'lucide-react';
+import { Menu, X, Award, ArrowRight, CheckCircle, ChevronRight } from 'lucide-react';
 
-export default function ConstructionSite() {
+const services = [
+  {
+    title: "Custom Deck Building",
+    description: "Transform your backyard with a custom deck designed for your lifestyle. We use premium materials including cedar, composite, and pressure-treated lumber. Our expert craftsmen create multi-level entertainment spaces that become the heart of your home.",
+    features: ["Custom Design & 3D Rendering", "Premium Materials", "Structural Engineering", "Weather Resistant Finishes"],
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop",
+    reverse: false
+  },
+  {
+    title: "Landscape Design",
+    description: "Complete landscape transformations that enhance your property's beauty and value. From plant selection to irrigation systems, we create outdoor spaces that thrive season after season.",
+    features: ["Professional Design", "Native Plant Selection", "Irrigation Systems", "Seasonal Maintenance"],
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=600&fit=crop",
+    reverse: true
+  },
+  {
+    title: "Outdoor Living Spaces",
+    description: "Extend your living area outdoors with custom patios, fire pits, outdoor kitchens, and pergolas. Perfect for entertaining or relaxing with family.",
+    features: ["Fire Features", "Outdoor Kitchens", "Pergolas & Gazebos", "Lighting Design"],
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+    reverse: false
+  }
+];
+
+const ConstructionSite = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [beforeAfterSlider, setBeforeAfterSlider] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -218,6 +242,36 @@ export default function ConstructionSite() {
           </div>
         </div>
       </section>
+
+      {/* Services */}
+      <section id="services" className="bg-stone-50">
+        {services.map((service, index) => (
+          <div key={index} className={`grid lg:grid-cols-2 ${service.reverse ? 'lg:grid-flow-dense' : ''}`}>
+            <div className={`${service.reverse ? 'lg:col-start-2' : ''}`}>
+              <img src={service.image} alt={service.title} className="w-full h-full object-cover min-h-96" />
+            </div>
+            <div className="flex items-center p-12 lg:p-20 bg-white">
+              <div>
+                <h3 className="text-4xl font-bold text-stone-900 mb-6">{service.title}</h3>
+                <p className="text-lg text-stone-600 mb-8 leading-relaxed">{service.description}</p>
+                <ul className="space-y-3 mb-8">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-3 text-stone-700">
+                      <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button className="text-emerald-600 font-bold flex items-center gap-2 hover:gap-3 transition-all cursor-pointer">
+                  Learn More <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }
+
+export default ConstructionSite;
