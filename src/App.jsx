@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X, Award, ArrowRight, CheckCircle, ChevronRight } from 'lucide-react';
+import { Menu, X, Award, ArrowRight, CheckCircle, ChevronRight, Hammer, Users, Shield } from 'lucide-react';
 
 const services = [
   {
@@ -25,10 +25,39 @@ const services = [
   }
 ];
 
+const processSteps = [
+  {
+    title: "Consultation",
+    description: "Free on-site visit to discuss your vision and requirements",
+    icon: <Users className="w-8 h-8" />
+  },
+  {
+    title: "Design & Quote",
+    description: "Detailed proposal with 3D renderings and transparent pricing",
+    icon: <Hammer className="w-8 h-8" />
+  },
+  {
+    title: "Permits & Prep",
+    description: "We handle all permits and site preparation work",
+    icon: <Shield className="w-8 h-8" />
+  },
+  {
+    title: "Construction",
+    description: "Expert craftsmanship with regular progress updates",
+    icon: <Award className="w-8 h-8" />
+  },
+  {
+    title: "Final Walkthrough",
+    description: "Inspection and guarantee you're 100% satisfied",
+    icon: <CheckCircle className="w-8 h-8" />
+  }
+];
+
 const ConstructionSite = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [beforeAfterSlider, setBeforeAfterSlider] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [activeProcess, setActiveProcess] = useState(0);
   const sliderRef = useRef(null);
 
   const updateSliderPosition = (clientX) => {
@@ -269,6 +298,49 @@ const ConstructionSite = () => {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* Process Timeline */}
+      <section id="process" className="py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-stone-900 mb-4">Our Process</h2>
+            <p className="text-xl text-stone-600">Simple, transparent, and stress-free</p>
+          </div>
+
+          <div className="relative">
+            <div className="hidden md:block absolute top-16 left-0 right-0 h-1 bg-stone-200">
+              <div
+                className="h-full bg-emerald-600 transition-all duration-500"
+                style={{ width: `${(activeProcess / (processSteps.length - 1)) * 100}%` }}
+              />
+            </div>
+
+            <div className="grid md:grid-cols-5 gap-8 relative">
+              {processSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className="text-center cursor-pointer"
+                  onClick={() => setActiveProcess(index)}
+                  onMouseEnter={() => setActiveProcess(index)}
+                >
+                  <div
+                    className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center transition-all ${activeProcess >= index
+                      ? 'bg-emerald-600 text-white scale-110'
+                      : 'bg-stone-200 text-stone-500'
+                      }`}
+                  >
+                    {step.icon}
+                  </div>
+                  <h3 className={`font-bold text-lg mb-2 ${activeProcess === index ? 'text-emerald-600' : 'text-stone-900'}`}>
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-stone-600 leading-relaxed">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
