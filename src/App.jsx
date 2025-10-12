@@ -53,6 +53,51 @@ const processSteps = [
   }
 ];
 
+const projects = [
+  {
+    title: "Modern Deck Addition",
+    location: "Riverside",
+    type: "Residential",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=800&fit=crop",
+    size: "large"
+  },
+  {
+    title: "Backyard Oasis",
+    location: "Oak Valley",
+    type: "Landscaping",
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=400&fit=crop",
+    size: "small"
+  },
+  {
+    title: "Outdoor Kitchen",
+    location: "Pine Ridge",
+    type: "Outdoor Living",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop",
+    size: "small"
+  },
+  {
+    title: "Custom Patio",
+    location: "Hillside",
+    type: "Hardscaping",
+    image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=600&h=800&fit=crop",
+    size: "large"
+  },
+  {
+    title: "Home Extension",
+    location: "Downtown",
+    type: "Addition",
+    image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&h=600&fit=crop",
+    size: "medium"
+  },
+  {
+    title: "Garden Landscaping",
+    location: "Westside",
+    type: "Landscaping",
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=400&fit=crop",
+    size: "small"
+  }
+];
+
 const ConstructionSite = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [beforeAfterSlider, setBeforeAfterSlider] = useState(50);
@@ -339,6 +384,40 @@ const ConstructionSite = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section id="portfolio" className="py-24 px-6 bg-stone-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-stone-900 mb-4">Our Work</h2>
+            <p className="text-xl text-stone-600">Real projects, real results</p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className={`relative group overflow-hidden rounded-lg cursor-pointer ${project.size === 'large' ? 'col-span-2 row-span-2' :
+                  project.size === 'medium' ? 'row-span-2' : ''
+                  }`}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <p className="text-sm text-emerald-400 mb-2">{project.type}</p>
+                    <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+                    <p className="text-sm text-gray-300">{project.location}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
