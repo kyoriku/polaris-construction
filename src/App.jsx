@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Menu, X, Award, ArrowRight, CheckCircle, ChevronRight, Hammer, Users, Shield } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Menu, X, Award, ArrowRight, CheckCircle, ChevronRight, Hammer, Shield, Users } from 'lucide-react';
 
 const services = [
   {
@@ -418,6 +418,96 @@ const ConstructionSite = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-24 px-6 bg-emerald-600">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center text-white mb-12">
+            <h2 className="text-5xl font-bold mb-4">Start Your Project Today</h2>
+            <p className="text-xl text-emerald-100">Get a free consultation and estimate</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="space-y-6 text-white">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Call or Text</p>
+                  <a href="tel:1234567890" className="text-emerald-100 hover:text-white text-lg">
+                    (123) 456-7890
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Email Us</p>
+                  <a href="mailto:info@eliteconstruction.com" className="text-emerald-100 hover:text-white">
+                    info@eliteconstruction.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Service Area</p>
+                  <p className="text-emerald-100">Metro Area & Surrounding Communities</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Business Hours</p>
+                  <p className="text-emerald-100">Mon-Fri: 8AM - 6PM<br />Sat: 9AM - 4PM</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-stone-900 mb-6">Request Free Estimate</h3>
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                />
+                <textarea
+                  placeholder="Tell us about your project"
+                  rows="4"
+                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                />
+                <button
+                  onClick={() => alert('Form submission would integrate with backend service')}
+                  className="w-full py-4 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer"
+                >
+                  Get Free Estimate
+                </button>
+                <p className="text-sm text-stone-600 text-center">
+                  We respond within 24 hours • No obligation
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
