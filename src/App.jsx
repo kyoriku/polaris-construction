@@ -511,6 +511,38 @@ const ConstructionSite = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-stone-900 text-gray-400 py-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-white font-bold text-xl mb-4">Elite Construction</h3>
+              <p className="leading-relaxed">Quality craftsmanship for your outdoor space. Licensed, bonded, and insured.</p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Services</h4>
+              <ul className="space-y-2">
+                <li className="hover:text-white cursor-pointer transition-colors">Deck Building</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Landscaping</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Home Additions</li>
+                <li className="hover:text-white cursor-pointer transition-colors">Outdoor Living</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Contact</h4>
+              <ul className="space-y-2">
+                <li>(123) 456-7890</li>
+                <li>info@eliteconstruction.com</li>
+                <li>Licensed #123456</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-stone-800 pt-8 text-center text-sm">
+            <p>© 2025 Elite Construction Co. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
