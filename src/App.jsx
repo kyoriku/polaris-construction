@@ -6,21 +6,21 @@ const services = [
     title: "Custom Deck Building",
     description: "Transform your backyard with a custom deck designed for your lifestyle. We use premium materials including cedar, composite, and pressure-treated lumber. Our expert craftsmen create multi-level entertainment spaces that become the heart of your home.",
     features: ["Custom Design & 3D Rendering", "Premium Materials", "Structural Engineering", "Weather Resistant Finishes"],
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1617850687395-620757feb1f3?w=800&h=600&fit=crop",
     reverse: false
   },
   {
     title: "Landscape Design",
     description: "Complete landscape transformations that enhance your property's beauty and value. From plant selection to irrigation systems, we create outdoor spaces that thrive season after season.",
     features: ["Professional Design", "Native Plant Selection", "Irrigation Systems", "Seasonal Maintenance"],
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1734079692087-91bac04efcd1?w=800&h=600&fit=crop",
     reverse: true
   },
   {
     title: "Outdoor Living Spaces",
     description: "Extend your living area outdoors with custom patios, fire pits, outdoor kitchens, and pergolas. Perfect for entertaining or relaxing with family.",
     features: ["Fire Features", "Outdoor Kitchens", "Pergolas & Gazebos", "Lighting Design"],
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1696846912973-3233cc80bf86?w=800&h=600&fit=crop",
     reverse: false
   }
 ];
@@ -58,42 +58,42 @@ const projects = [
     title: "Modern Deck Addition",
     location: "Riverside",
     type: "Residential",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=800&fit=crop",
+    image: "https://images.unsplash.com/photo-1656646549569-e3ad3ff8f9f9?w=600&h=400&fit=crop",
     size: "large"
   },
   {
     title: "Backyard Oasis",
     location: "Oak Valley",
     type: "Landscaping",
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1596481768453-8befafc2d7ae?w=400&h=400&fit=crop",
     size: "small"
   },
   {
     title: "Outdoor Kitchen",
     location: "Pine Ridge",
     type: "Outdoor Living",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1694885090746-d90472e11c0e?w=400&h=400&fit=crop",
     size: "small"
   },
   {
     title: "Custom Patio",
     location: "Hillside",
     type: "Hardscaping",
-    image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=600&h=800&fit=crop",
+    image: "https://images.unsplash.com/photo-1624409990662-03f19cc0e0cc?w=600&h=800&fit=crop",
     size: "large"
   },
   {
     title: "Home Extension",
     location: "Downtown",
     type: "Addition",
-    image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=400&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1704742950992-9815a104820c?w=400&h=600&fit=crop",
     size: "medium"
   },
   {
     title: "Garden Landscaping",
     location: "Westside",
     type: "Landscaping",
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?w=400&h=400&fit=crop",
     size: "small"
   }
 ];
@@ -213,7 +213,11 @@ const ConstructionSite = () => {
               </a>
             </nav>
 
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden cursor-pointer">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden cursor-pointer"
+              aria-label="Toggle mobile menu"
+            >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -237,7 +241,7 @@ const ConstructionSite = () => {
       {/* Hero */}
       <section className="relative h-screen mt-16">
         <img
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=1000&fit=crop"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&h=1000&fit=crop"
           alt="Construction site"
           className="w-full h-full object-cover"
         />
@@ -312,10 +316,12 @@ const ConstructionSite = () => {
             className="relative w-full max-w-5xl mx-auto h-96 md:h-[600px] rounded-2xl overflow-hidden shadow-2xl cursor-ew-resize select-none"
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
+            role="img"
+            aria-label="Before and after comparison slider showing construction transformation. Drag the slider to compare before and after images."
           >
             <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&h=800&fit=crop"
-              alt="Before"
+              src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&h=800&fit=crop"
+              alt="Before construction"
               className="absolute inset-0 w-full h-full object-cover"
             />
 
@@ -324,8 +330,8 @@ const ConstructionSite = () => {
               style={{ clipPath: `inset(0 ${100 - beforeAfterSlider}% 0 0)` }}
             >
               <img
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=800&fit=crop"
-                alt="After"
+                src="https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?w=1200&h=800&fit=crop"
+                alt="After construction"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
@@ -401,11 +407,13 @@ const ConstructionSite = () => {
 
             <div className="grid md:grid-cols-5 gap-8 relative">
               {processSteps.map((step, index) => (
-                <div
+                <button
                   key={index}
-                  className="text-center cursor-pointer"
+                  className="text-center cursor-pointer bg-transparent border-0 w-full p-0"
                   onClick={() => setActiveProcess(index)}
                   onMouseEnter={() => setActiveProcess(index)}
+                  aria-label={`Step ${index + 1}: ${step.title} - ${step.description}`}
+                  aria-pressed={activeProcess === index}
                 >
                   <div
                     className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center transition-all ${activeProcess >= index
@@ -419,7 +427,7 @@ const ConstructionSite = () => {
                     {step.title}
                   </h3>
                   <p className="text-sm text-stone-600 leading-relaxed">{step.description}</p>
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -515,26 +523,42 @@ const ConstructionSite = () => {
             <div className="bg-white rounded-xl p-8">
               <h3 className="text-2xl font-bold text-stone-900 mb-6">Request Free Estimate</h3>
               <div className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
-                />
-                <textarea
-                  placeholder="Tell us about your project"
-                  rows="4"
-                  className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
-                />
+                <div>
+                  <label htmlFor="name" className="block text-stone-700 font-medium mb-2">Your Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="John Smith"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-stone-700 font-medium mb-2">Email Address</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-stone-700 font-medium mb-2">Phone Number</label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="(123) 456-7890"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-stone-700 font-medium mb-2">Project Details</label>
+                  <textarea
+                    id="message"
+                    placeholder="Tell us about your project..."
+                    rows="4"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600"
+                  />
+                </div>
                 <button
                   onClick={() => alert('Form submission would integrate with backend service')}
                   className="w-full py-4 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer"
@@ -561,17 +585,41 @@ const ConstructionSite = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2">
-                <li className="hover:text-white cursor-pointer transition-colors">Deck Building</li>
-                <li className="hover:text-white cursor-pointer transition-colors">Landscaping</li>
-                <li className="hover:text-white cursor-pointer transition-colors">Home Additions</li>
-                <li className="hover:text-white cursor-pointer transition-colors">Outdoor Living</li>
+                <li>
+                  <button onClick={() => scrollToSection('services')} className="hover:text-white cursor-pointer transition-colors text-left">
+                    Deck Building
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection('services')} className="hover:text-white cursor-pointer transition-colors text-left">
+                    Landscaping
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection('services')} className="hover:text-white cursor-pointer transition-colors text-left">
+                    Home Additions
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection('services')} className="hover:text-white cursor-pointer transition-colors text-left">
+                    Outdoor Living
+                  </button>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Contact</h4>
               <ul className="space-y-2">
-                <li>(123) 456-7890</li>
-                <li>info@eliteconstruction.com</li>
+                <li>
+                  <a href="tel:1234567890" className="hover:text-white transition-colors">
+                    (123) 456-7890
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:info@eliteconstruction.com" className="hover:text-white transition-colors">
+                    info@eliteconstruction.com
+                  </a>
+                </li>
                 <li>Licensed #123456</li>
               </ul>
             </div>
