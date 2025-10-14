@@ -104,6 +104,12 @@ const ConstructionSite = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [activeProcess, setActiveProcess] = useState(0);
   const sliderRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
 
   const updateSliderPosition = (clientX) => {
     if (sliderRef.current) {
@@ -160,13 +166,32 @@ const ConstructionSite = () => {
     }
   }, [isDragging]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <div className="min-h-screen bg-stone-50">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-emerald-700 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <div
+              className="text-2xl font-bold text-emerald-700 cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               Elite Construction
             </div>
 
@@ -174,12 +199,16 @@ const ConstructionSite = () => {
               {['services', 'process', 'portfolio', 'contact'].map((item) => (
                 <button
                   key={item}
+                  onClick={() => scrollToSection(item)}
                   className="text-stone-700 hover:text-emerald-600 transition-colors capitalize font-medium cursor-pointer"
                 >
                   {item}
                 </button>
               ))}
-              <a href="tel:1234567890" className="px-6 py-2 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer">
+              <a
+                href="tel:1234567890"
+                className="px-6 py-2 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer"
+              >
                 (123) 456-7890
               </a>
             </nav>
@@ -190,10 +219,11 @@ const ConstructionSite = () => {
           </div>
 
           {mobileMenuOpen && (
-            <div className="lg:hidden mt-4 pt-4 border-t">
+            <div ref={mobileMenuRef} className="lg:hidden mt-4 pt-4 border-t">
               {['services', 'process', 'portfolio', 'contact'].map((item) => (
                 <button
                   key={item}
+                  onClick={() => scrollToSection(item)}
                   className="block w-full text-left py-3 text-stone-700 hover:text-emerald-600 capitalize cursor-pointer"
                 >
                   {item}
@@ -221,17 +251,22 @@ const ConstructionSite = () => {
                 <span className="font-semibold">Licensed & Insured</span>
               </div>
               <h1 className="text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Build Your Dream<br />
-                Outdoor Space
+                Build Your Dream<br />Outdoor Space
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Expert construction and landscaping services. From custom decks to complete property transformations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-4 bg-emerald-600 text-white font-bold text-lg rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer flex items-center justify-center gap-2">
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="px-8 py-4 bg-emerald-600 text-white font-bold text-lg rounded-lg hover:bg-emerald-700 transition-colors cursor-pointer flex items-center justify-center gap-2"
+                >
                   Get Free Estimate <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-lg border-2 border-white hover:bg-white/20 transition-colors cursor-pointer">
+                <button
+                  onClick={() => scrollToSection('portfolio')}
+                  className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-lg border-2 border-white hover:bg-white/20 transition-colors cursor-pointer"
+                >
                   View Our Work
                 </button>
               </div>
@@ -336,7 +371,10 @@ const ConstructionSite = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="text-emerald-600 font-bold flex items-center gap-2 hover:gap-3 transition-all cursor-pointer">
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="text-emerald-600 font-bold flex items-center gap-2 hover:gap-3 transition-all cursor-pointer"
+                >
                   Learn More <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
