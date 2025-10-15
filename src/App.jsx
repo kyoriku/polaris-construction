@@ -355,13 +355,13 @@ const ConstructionSite = () => {
 
             <div
               className="absolute top-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg font-semibold transition-opacity duration-300"
-              style={{ opacity: beforeAfterSlider > 10 ? 1 : 0 }}
+              style={{ opacity: beforeAfterSlider > 20 ? 1 : 0 }}
             >
               BEFORE
             </div>
             <div
               className="absolute top-4 right-4 bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold transition-opacity duration-300"
-              style={{ opacity: beforeAfterSlider < 90 ? 1 : 0 }}
+              style={{ opacity: beforeAfterSlider < 80 ? 1 : 0 }}
             >
               AFTER
             </div>
