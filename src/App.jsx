@@ -353,14 +353,13 @@ const ConstructionSite = () => {
               </div>
             </div>
 
-            
-            <div 
+            <div
               className="absolute top-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg font-semibold transition-opacity duration-300"
               style={{ opacity: beforeAfterSlider > 10 ? 1 : 0 }}
             >
               BEFORE
             </div>
-            <div 
+            <div
               className="absolute top-4 right-4 bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold transition-opacity duration-300"
               style={{ opacity: beforeAfterSlider < 90 ? 1 : 0 }}
             >
@@ -591,7 +590,7 @@ const ConstructionSite = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-white font-bold text-xl mb-4">polaris Construction</h3>
+              <h3 className="text-white font-bold text-xl mb-4">Polaris Construction</h3>
               <p className="leading-relaxed">Quality craftsmanship for your outdoor space. Licensed, bonded, and insured.</p>
             </div>
             <div>
