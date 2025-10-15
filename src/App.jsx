@@ -189,10 +189,15 @@ const ConstructionSite = () => {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div
-              className="text-2xl font-bold text-emerald-700 cursor-pointer"
+              className="flex items-center gap-3 text-2xl font-bold text-emerald-700 cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              Elite Construction
+              <img
+                src="/favicon.svg"
+                alt="Polaris Construction Logo"
+                className="w-8 h-8"
+              />
+              <span>Polaris Construction</span>
             </div>
 
             <nav className="hidden lg:flex items-center gap-8">
@@ -348,10 +353,17 @@ const ConstructionSite = () => {
               </div>
             </div>
 
-            <div className="absolute top-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg font-semibold">
+            
+            <div 
+              className="absolute top-4 left-4 bg-black/50 text-white px-4 py-2 rounded-lg font-semibold transition-opacity duration-300"
+              style={{ opacity: beforeAfterSlider > 10 ? 1 : 0 }}
+            >
               BEFORE
             </div>
-            <div className="absolute top-4 right-4 bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold">
+            <div 
+              className="absolute top-4 right-4 bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold transition-opacity duration-300"
+              style={{ opacity: beforeAfterSlider < 90 ? 1 : 0 }}
+            >
               AFTER
             </div>
           </div>
@@ -495,8 +507,8 @@ const ConstructionSite = () => {
                 </div>
                 <div>
                   <p className="font-semibold mb-1">Email Us</p>
-                  <a href="mailto:info@eliteconstruction.com" className="text-emerald-100 hover:text-white">
-                    info@eliteconstruction.com
+                  <a href="mailto:info@polarisconstruction.com" className="text-emerald-100 hover:text-white">
+                    info@polarisconstruction.com
                   </a>
                 </div>
               </div>
@@ -579,7 +591,7 @@ const ConstructionSite = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-white font-bold text-xl mb-4">Elite Construction</h3>
+              <h3 className="text-white font-bold text-xl mb-4">polaris Construction</h3>
               <p className="leading-relaxed">Quality craftsmanship for your outdoor space. Licensed, bonded, and insured.</p>
             </div>
             <div>
@@ -616,8 +628,8 @@ const ConstructionSite = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:info@eliteconstruction.com" className="hover:text-white transition-colors">
-                    info@eliteconstruction.com
+                  <a href="mailto:info@polarisconstruction.com" className="hover:text-white transition-colors">
+                    info@polarisconstruction.com
                   </a>
                 </li>
                 <li>Licensed #123456</li>
@@ -625,7 +637,7 @@ const ConstructionSite = () => {
             </div>
           </div>
           <div className="border-t border-stone-800 pt-8 text-center text-sm">
-            <p>© 2025 Elite Construction Co. All rights reserved.</p>
+            <p>© 2025 polaris Construction Co. All rights reserved.</p>
           </div>
         </div>
       </footer>
