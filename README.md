@@ -25,7 +25,7 @@ A professional construction company website designed to showcase projects, demon
 **Note**: This is a demonstration project showcasing modern web development for construction and contracting businesses. All business details, contact information, project images, and client testimonials are placeholder content.
 
 ### Deployed Site
-Visit the live website at: 
+Visit the live website at: [https://polaris-construction.netlify.app](https://polaris-construction.netlify.app)
 
 ## Features
 - **Interactive Before/After Slider**: Draggable comparison slider showing project transformations
