@@ -193,7 +193,7 @@ const ConstructionSite = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <img
-                src="/favicon.svg"
+                src="favicon/favicon.svg"
                 alt="Polaris Construction Logo"
                 className="w-8 h-8"
               />
