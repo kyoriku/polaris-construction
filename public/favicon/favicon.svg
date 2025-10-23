@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Polaris Construction icon">
+  <!-- Outer circle -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#047857" stroke-width="3"/>
+  <!-- Eight-point compass/star -->
+  <polygon fill="#047857" points="32.000,12.000 35.061,24.609 46.142,17.858 39.391,28.939 52.000,32.000 39.391,35.061 46.142,46.142 35.061,39.391 32.000,52.000 28.939,39.391 17.858,46.142 24.609,35.061 12.000,32.000 24.609,28.939 17.858,17.858 28.939,24.609"/>
+</svg>
